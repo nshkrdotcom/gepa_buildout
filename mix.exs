@@ -1,5 +1,8 @@
 Code.require_file("build_support/workspace_contract.exs", __DIR__)
-Code.require_file("build_support/dependency_resolver.exs", __DIR__)
+
+unless Code.ensure_loaded?(DependencySources) do
+  Code.require_file("build_support/dependency_sources.exs", __DIR__)
+end
 
 defmodule GEPABuildout.MixProject do
   use Mix.Project
@@ -21,6 +24,7 @@ defmodule GEPABuildout.MixProject do
       description: "Deterministic GEPA domain task buildout",
       source_url: @source_url,
       homepage_url: @source_url,
+      package: package(),
       package_paths: GEPABuildout.Build.WorkspaceContract.package_paths()
     ]
   end
@@ -42,10 +46,18 @@ defmodule GEPABuildout.MixProject do
 
   defp deps do
     [
-      {:gepa_framework, GEPABuildout.Build.DependencyResolver.gepa_framework()},
+      DependencySources.dep(:gepa_framework, __DIR__),
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.40.1", only: [:dev, :test], runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url},
+      files: ~w(lib assets build_support mix.exs README.md LICENSE AGENTS.md .formatter.exs)
     ]
   end
 
