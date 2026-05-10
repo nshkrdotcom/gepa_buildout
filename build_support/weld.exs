@@ -47,7 +47,7 @@ defmodule GEPABuildout.Build.WeldContract do
       ],
       output: [
         docs: ["README.md"],
-        assets: []
+        assets: ["assets/gepa_buildout.svg"]
       ],
       verify: [
         artifact_tests: ["test"],

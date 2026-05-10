@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-labelledby="title desc">
+  <title id="title">GEPA Buildout</title>
+  <desc id="desc">Hexagonal buildout mark with deterministic task blocks and redacted projection lanes.</desc>
+  <defs>
+    <linearGradient id="gb-shell" x1="24" y1="34" x2="176" y2="166" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f59e0b"/>
+      <stop offset="0.45" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <radialGradient id="gb-fill" cx="48%" cy="36%" r="70%">
+      <stop offset="0" stop-color="#fff7ed"/>
+      <stop offset="0.34" stop-color="#fed7aa"/>
+      <stop offset="1" stop-color="#2e1065"/>
+    </radialGradient>
+    <filter id="gb-glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="2.6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.96 0 1 0 0 0.45 0 0 1 0 0.16 0 0 0 .65 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="gb-clip">
+      <path d="M100 9 178.8 54.5v91L100 191l-78.8-45.5v-91Z"/>
+    </clipPath>
+  </defs>
+  <path d="M100 9 178.8 54.5v91L100 191l-78.8-45.5v-91Z" fill="url(#gb-fill)" stroke="url(#gb-shell)" stroke-width="7" stroke-linejoin="round"/>
+  <g clip-path="url(#gb-clip)">
+    <path d="M25 56h150M25 100h150M25 144h150" stroke="#fff7ed" stroke-width="1.4" opacity=".24"/>
+    <path d="M56 42v116M100 32v136M144 42v116" stroke="#fff7ed" stroke-width="1.4" opacity=".18"/>
+    <g filter="url(#gb-glow)">
+      <rect x="48" y="50" width="46" height="32" rx="7" fill="#431407" stroke="#fed7aa" stroke-width="3"/>
+      <rect x="106" y="50" width="46" height="32" rx="7" fill="#3b0764" stroke="#ddd6fe" stroke-width="3"/>
+      <rect x="48" y="118" width="46" height="32" rx="7" fill="#3b0764" stroke="#fca5a5" stroke-width="3"/>
+      <rect x="106" y="118" width="46" height="32" rx="7" fill="#431407" stroke="#fde68a" stroke-width="3"/>
+      <rect x="70" y="84" width="60" height="32" rx="8" fill="#111827" stroke="#fff7ed" stroke-width="3.4"/>
+    </g>
+    <path d="M71 66h25M96 66h10M130 66h20M76 134h30M119 134h28" stroke="#fff7ed" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+    <path d="M78 100h44" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>
+    <path d="M88 93h28M88 107h18" stroke="#fff7ed" stroke-width="2.4" stroke-linecap="round"/>
+    <g fill="none" stroke="#fff7ed" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M94 66h12"/>
+      <path d="M100 82v10"/>
+      <path d="M100 116v10"/>
+      <path d="M94 134h12"/>
+      <path d="M72 82v18h-10"/>
+      <path d="M128 82v18h10"/>
+      <path d="M72 118v-18"/>
+      <path d="M128 118v-18"/>
+    </g>
+    <path d="M41 164c18-9 36-9 54 0s36 9 54 0" fill="none" stroke="#fbbf24" stroke-width="3" opacity=".78"/>
+  </g>
+</svg>
