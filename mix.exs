@@ -43,7 +43,6 @@ defmodule GEPABuildout.MixProject do
   defp deps do
     [
       {:gepa_framework, GEPABuildout.Build.DependencyResolver.gepa_framework()},
-      {:weld, "~> 0.8.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.40.1", only: [:dev, :test], runtime: false}
@@ -59,8 +58,7 @@ defmodule GEPABuildout.MixProject do
         "test",
         "credo --strict",
         "dialyzer --format short",
-        "docs",
-        "weld.verify"
+        "docs"
       ]
     ]
   end
